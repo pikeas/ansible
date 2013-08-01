@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/#python
 # This file is part of Ansible
 #
 # Ansible is free software: you can redistribute it and/or modify
@@ -148,7 +148,6 @@ class ElbManager:
                   are attached to self.instance_id"""
 
         try:
-            #elb = boto.connect_elb(self.ec2_access_key, self.ec2_secret_key)
             elb = boto.ec2.elb.connect_to_region(self.region, aws_access_key_id=self.ec2_access_key, aws_secret_access_key=self.ec2_secret_key)
         except boto.exception.NoAuthHandlerFound, e:
             self.module.fail_json(msg=str(e))
